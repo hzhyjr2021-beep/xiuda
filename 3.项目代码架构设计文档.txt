@@ -1,0 +1,40 @@
+项目代码架构设计文档
+
+1. 项目定位与总体策略
+- 目标：实现“冲刺首页 / 复习建议 / 合影回忆”三大页面，兼顾桌面与移动端体验，通过静态托管（Webify/Vercel）快速上线。
+- 后端服务判断：全部内容（倒计时起始日期、复习建议文本、照片元数据）可在构建时或运行时以静态 JSON/常量呈现，打卡与留言功能已取消，因此无需独立后端，只需静态资源托管即可。
+
+2. 技术选型
+- 框架：React + Vite（或使用 Next.js 静态导出亦可），原因是组件化开发、高效状态管理、易于部署到 Vercel。
+- 样式方案：Tailwind CSS 或 CSS Modules，保证响应式实现简单；配合少量自定义主题变量（色彩、字体）。
+- 状态管理：React 内部 `useState` + `useEffect` 即可；倒计时采用自定义 Hook。
+- 数据管理：在 `src/data/` 中维护 JSON/TS 常量（复习建议、照片信息、站点配置）。
+
+3. 页面与组件拆分
+- `HomePage`：包含 `HeroSection`（口号+倒计时）、`QuickActions`（复习建议/合影回忆按钮）、`Footer`。
+- `StudyTipsPage`：顶部固定栏、`TabNav`、`TipsPanel`（根据当前标签读取对应文字，直接渲染列表）。支持五个标签：政治、英语（一）、数学（三）、专业课、其他。
+- `GalleryPage`：`HeroBanner`（横幅）、`Timeline` 组件（内含多个 `TimelineItem`，含照片预览与“查看原图”按钮）。
+- 公共组件：`Header`（导航）、`Button`, `ResponsiveContainer`（控制宽度与间距）。
+
+4. 响应式与交互设计要点
+- 栅格策略：移动端采用单列堆叠；桌面端为 960px 中心布局。Tailwind 断点（sm/md/lg）即可满足需求。
+- 倒计时 Hook：`useCountdown(targetDate)` 返回天/时/分，首页定时每秒更新。
+- 标签切换：`TabNav` 维护当前学科 key，点击更新 state 并在 `TipsPanel` 中渲染对应段落。
+- 时间轴：通过 CSS Flex + pseudo elements 实现竖直线，移动端降级为单列。
+
+5. 数据结构
+- `config/site.ts`：站点口号、目标日期等基础信息。
+- `data/tips.ts`：按科目存储数组，每项包含原始文本段；页面直接 map 输出，保证与 Word 内容一致。
+- `data/photos.ts`：包含三张照片的文件名、时间、关键词、描述（如需）。
+
+6. 静态托管流程
+- 构建：`npm run build` 生成纯静态文件（`dist/`）。
+- 部署：将 `dist/` 上传 Webify 或连接 GitHub/Vercel 自动构建；设置根目录为项目根，构建命令 `npm run build`，输出目录 `dist`。
+
+7. 开发步骤建议
+1) 初始化项目（如 `npm create vite@latest study-run -- --template react-ts`）。
+2) 配置 Tailwind 或 CSS 方案，添加全局主题。
+3) 编写数据文件与通用组件。
+4) 依次开发首页、复习建议页、合影回忆页，完成响应式调整。
+5) 本地自测后推送仓库并在 Webify/Vercel 绑定部署。
+

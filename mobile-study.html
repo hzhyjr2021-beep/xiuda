@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>复习建议 · 移动端</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+SC:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/mobile-study.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="topbar__back" href="mobile-home.html" aria-label="返回首页"
+        >← 首页</a
+      >
+      <div class="topbar__title">
+        <p>复习建议</p>
+        <span class="badge">剩余 <span data-remaining>30</span> 天</span>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="intro-card">
+        <p class="eyebrow">复习指南</p>
+        <h1>四科要点一屏掌握</h1>
+        <p class="intro-copy">
+          政治、英语（一）、数学（三）、专业课建议随标签切换显示。
+        </p>
+      </section>
+
+      <section class="tabs" role="tablist">
+        <button class="tab is-active" data-tab="politics" role="tab">
+          政治
+        </button>
+        <button class="tab" data-tab="english" role="tab">英语（一）</button>
+        <button class="tab" data-tab="math" role="tab">数学（三）</button>
+        <button class="tab" data-tab="major" role="tab">专业课</button>
+        <button class="tab" data-tab="others" role="tab">其他</button>
+      </section>
+
+      <section class="tips-card" aria-live="polite">
+        <article class="tips-panel is-visible" data-panel="politics">
+          <h2 class="tips-card__title">政治</h2>
+          <ol class="tips-card__list">
+            <li>考前把选择题背诵小册子，再翻上几遍；</li>
+            <li>把肖四肖八选择题吃透，错题反复看知识点；</li>
+            <li>肖四主观题背熟；</li>
+            <li>
+              可以下载公众号（小谭学长、利之学姐、不易学长）的时政资料；
+            </li>
+          </ol>
+        </article>
+
+        <article class="tips-panel" data-panel="english">
+          <h2 class="tips-card__title">英语（一）</h2>
+          <ol class="tips-card__list">
+            <li>
+              背诵作文模版，大小作文必须保持练习，至少 2/3 天就要写一篇；
+            </li>
+            <li>保持手感，优先级是：写作 &gt; 阅读 &gt; 翻译 &gt; 新题型 &gt; 完形填空；</li>
+            <li>单词背真题核心词，每天都要背，一直背到考前；</li>
+            <li>模拟考试，把控时间，安排好每个题型的做题顺序；</li>
+          </ol>
+        </article>
+
+        <article class="tips-panel" data-panel="math">
+          <h2 class="tips-card__title">数学（三）</h2>
+          <ol class="tips-card__list">
+            <li>掐时间去模考，适应真题的风格；</li>
+            <li>模拟卷可以补充李林 6+4；</li>
+            <li>回顾错题，错题反复做；</li>
+            <li>反复回顾知识点，一定要查漏补缺；</li>
+          </ol>
+        </article>
+
+        <article class="tips-panel" data-panel="major">
+          <h2 class="tips-card__title">专业课</h2>
+          <ol class="tips-card__list">
+            <li>熟练背诵简答题；</li>
+            <li>核心考点一定要重点反复记忆；</li>
+            <li>搞懂真题，抓住复习的重点，真题里的错题必须掌握；</li>
+            <li>注重知识点回顾，把教材从头到尾快速翻一遍；</li>
+          </ol>
+        </article>
+
+        <article class="tips-panel" data-panel="others">
+          <h2 class="tips-card__title">其他</h2>
+          <ol class="tips-card__list">
+            <li>最后阶段，一定要从自己的实际需求出发复习；</li>
+            <li>定期及时回顾知识点；</li>
+            <li>考前一个月根据考试时间安排起床与学习节奏；</li>
+            <li>黎明之前最黑暗，放弃就是大笨蛋！</li>
+          </ol>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>黎明之前最黑暗，放弃就是大笨蛋！</p>
+    </footer>
+
+    <script src="scripts/study-tabs.js" defer></script>
+  </body>
+</html>
+

@@ -1,0 +1,242 @@
+:root {
+  color-scheme: dark;
+  font-size: 16px;
+  --bg-dark: #0b1220;
+  --bg-card: rgba(15, 19, 37, 0.9);
+  --accent: #ffb347;
+  --accent-strong: #f97316;
+  --text-primary: #f8fafc;
+  --text-muted: #a5b4fc;
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --font-heading: "Montserrat", "Noto Sans SC", system-ui, sans-serif;
+  --font-body: "Noto Sans SC", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background: radial-gradient(circle at top, #172554, #050814 60%);
+  color: var(--text-primary);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.hero {
+  position: relative;
+  padding: 1.5rem clamp(1.25rem, 5vw, 2rem) 0;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(10, 37, 64, 0.85), rgba(5, 5, 12, 0.95));
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 420px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 6vw, 2.8rem);
+  margin: 1rem 0 0.5rem;
+  line-height: 1.2;
+}
+
+.hero__subtitle {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.countdown__item {
+  text-align: center;
+}
+
+.countdown__item strong {
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  display: block;
+}
+
+.countdown__item span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.cta-group {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.cta {
+  flex: 1;
+  text-align: center;
+  padding: 0.9rem 0;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta--primary {
+  background: linear-gradient(135deg, var(--accent-strong), #facc15);
+  color: #0f172a;
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.35);
+}
+
+.cta--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--text-primary);
+}
+
+.cta:active {
+  transform: translateY(1px);
+}
+
+.hero__helmet {
+  position: absolute;
+  right: -20%;
+  bottom: -10%;
+  width: 260px;
+  opacity: 0.35;
+  filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.6));
+  z-index: 0;
+}
+
+.preview {
+  padding: 0 clamp(1rem, 5vw, 2rem) 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.card__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin: 0 0 0.25rem;
+}
+
+.card__header h2 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+}
+
+.card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.card__list li {
+  line-height: 1.5;
+  color: #e2e8f0;
+}
+
+.card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.gallery {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.gallery__item {
+  min-width: 180px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-soft);
+}
+
+.gallery__item figcaption {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem 2.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero,
+  .preview {
+    max-width: 480px;
+  }
+
+  .hero__helmet {
+    right: -5%;
+    bottom: -5%;
+    opacity: 0.45;
+  }
+}
+

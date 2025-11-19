@@ -1,0 +1,40 @@
+建议目录结构
+
+project-root/
+├─ package.json
+├─ vite.config.ts
+├─ tsconfig.json
+├─ public/
+│  ├─ images/
+│  │  ├─ karting.jpg
+│  │  ├─ baiyunshan.jpg
+│  │  └─ graduation.jpg
+│  └─ favicon.svg
+└─ src/
+   ├─ main.tsx
+   ├─ App.tsx
+   ├─ routes/
+   │  ├─ HomePage.tsx
+   │  ├─ StudyTipsPage.tsx
+   │  └─ GalleryPage.tsx
+   ├─ components/
+   │  ├─ Header.tsx
+   │  ├─ HeroSection.tsx
+   │  ├─ CountdownCard.tsx
+   │  ├─ QuickActions.tsx
+   │  ├─ TabNav.tsx
+   │  ├─ TipsPanel.tsx
+   │  ├─ Timeline.tsx
+   │  └─ Footer.tsx
+   ├─ data/
+   │  ├─ tips.ts
++   │  └─ photos.ts
+   ├─ config/
+   │  └─ site.ts
+   ├─ hooks/
+   │  └─ useCountdown.ts
+   ├─ styles/
+   │  ├─ globals.css
+   │  └─ theme.css
+   └─ assets.d.ts
+

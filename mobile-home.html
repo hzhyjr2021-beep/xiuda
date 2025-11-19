@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>考研冲刺 · 移动端首页</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+SC:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/mobile-home.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <span class="hero__badge">冲刺 30 天！</span>
+        <h1 class="hero__title">黎明之前最黑暗，放弃就是大笨蛋！</h1>
+        <p class="hero__subtitle">稳住心态 · 全速前进 · 修达必上岸！</p>
+        <div class="countdown" data-countdown>
+          <div class="countdown__item">
+            <strong data-days>00</strong>
+            <span>天</span>
+          </div>
+          <div class="countdown__item">
+            <strong data-hours>00</strong>
+            <span>时</span>
+          </div>
+          <div class="countdown__item">
+            <strong data-minutes>00</strong>
+            <span>分</span>
+          </div>
+          <div class="countdown__item">
+            <strong data-seconds>00</strong>
+            <span>秒</span>
+          </div>
+        </div>
+        <div class="cta-group">
+          <a class="cta cta--primary" href="mobile-study.html">复习建议</a>
+          <a class="cta cta--ghost" href="mobile-gallery.html">合影回忆</a>
+        </div>
+      </div>
+      <img
+        class="hero__helmet"
+        src="2023年12月_卡丁车.jpg"
+        alt="卡丁车头盔"
+        loading="lazy"
+      />
+    </header>
+
+    <main class="preview">
+      <section class="card" id="study">
+        <div class="card__header">
+          <p class="card__eyebrow">核心模块</p>
+          <h2>复习建议总览</h2>
+        </div>
+        <ul class="card__list">
+          <li>政治：肖四肖八 + 公众号时政，主观题背熟。</li>
+          <li>英语（一）：作文模版与真题核心词天天练。</li>
+          <li>数学（三）：掐表模考 + 李林 6+4，错题反复做。</li>
+          <li>专业课：简答题与真题错题逐条掌握。</li>
+          <li>其他：作息贴合考场时间，随时复盘。</li>
+        </ul>
+        <a class="card__link" href="mobile-study.html"
+          >进入复习建议页<span aria-hidden="true">→</span></a
+        >
+      </section>
+
+      <section class="card" id="gallery">
+        <div class="card__header">
+          <p class="card__eyebrow">情绪加油站</p>
+          <h2>合影回忆</h2>
+        </div>
+        <div class="gallery">
+          <figure class="gallery__item">
+            <img src="2023年12月_卡丁车.jpg" alt="卡丁车合影" loading="lazy" />
+            <figcaption>2023 · 卡丁车</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="2024年4月_白云山.jpg" alt="白云山合影" loading="lazy" />
+            <figcaption>2024 · 白云山</figcaption>
+          </figure>
+          <figure class="gallery__item">
+            <img src="2025年6月_毕业.jpg" alt="毕业合影" loading="lazy" />
+            <figcaption>2025 · 毕业</figcaption>
+          </figure>
+        </div>
+        <a class="card__link" href="mobile-gallery.html"
+          >查看时间轴<span aria-hidden="true">→</span></a
+        >
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Made with love by Huang · 2025</p>
+    </footer>
+
+    <script src="scripts/countdown.js" defer></script>
+  </body>
+</html>
+
